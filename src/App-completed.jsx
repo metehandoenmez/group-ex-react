@@ -6,7 +6,7 @@ function App() {
   return (
     <div>
       <CardComponent
-        cardId={"id1"}
+        cardId={"card1"}
         title={"Card Title"}
         subtitle={"Card Subtitle"}
         content={
@@ -15,7 +15,7 @@ function App() {
         buttonText={"Press Me"}
       ></CardComponent>
       <CardComponent
-        cardId={"id2"}
+        cardId={"card2"}
         title={"Card Title"}
         subtitle={"Card Subtitle"}
         content={
@@ -23,8 +23,9 @@ function App() {
         }
         buttonText={"Press Me"}
       ></CardComponent>
+
       <CardComponent
-        cardId={"id3"}
+        cardId={"card3"}
         title={"Card Title"}
         subtitle={"Card Subtitle"}
         content={
@@ -33,7 +34,6 @@ function App() {
         buttonText={"Press Me"}
       ></CardComponent>
     </div>
-    
   );
 }
 

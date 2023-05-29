@@ -14,15 +14,17 @@ React app will run on **localhost:3000**.
 
 ## Start editing the **src/app.jsx** file.
 
-Add an input tag and a button tag to the App component.
+Move the CardComponent we created previously to a CardComponent.jsx file.
+Import it in our App.jsx file.
 
-In App.jsx:
-Add a state variable called "items", which is an array.
-Add a state variable called "inputText", which is a string.
+Add an input tag in the CardComponent, after the first h3 tag.
 
-Save the text we input in that input tag in "inputText".
+Add an id property to the first h3 tag, called "titleH3".
+Add an event listener to the Press Me button, which changes the text of the #titleH3 element to what we have in our input tag.
+Add an id to the first div of the CardComponent.
+Use a prop to set this id, called cardId.
+Add another button called Delete Me to the card component. When we click it, we will delete the card. Use the prop id of the first div we created earlier.
+Use .remove() on the html element.
 
-Add a button called "Add item". When pressed, it will add the text in the inputText in the items array.
+Display this CardComponent three times, and delete every one of them each time.
 
-Use items.map() in the App's render functionality, to render a card component for each item in the items.
-Put the item text in the content prop of the CardComponent.
