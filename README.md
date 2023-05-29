@@ -14,17 +14,23 @@ React app will run on **localhost:3000**.
 
 ## Start editing the **src/app.jsx** file.
 
-Move the CardComponent we created previously to a CardComponent.jsx file.
-Import it in our App.jsx file.
+Create a div tag in the render function of your App component.
 
-Add an input tag in the CardComponent, after the first h3 tag.
+Create another component called CardComponent, in the file CardComponent.jsx, which will render:
+- a div tag
+  - an h3 tag, with text "Card title"
+  - an h5 tag, with text "Card subtitle"
+  - a p tag, with filler text
+  - a break tag
+  - a button called "Press me"
 
-Add an id property to the first h3 tag, called "titleH3".
-Add an event listener to the Press Me button, which changes the text of the #titleH3 element to what we have in our input tag.
-Add an id to the first div of the CardComponent.
-Use a prop to set this id, called cardId.
-Add another button called Delete Me to the card component. When we click it, we will delete the card. Use the prop id of the first div we created earlier.
-Use .remove() on the html element.
+Import this component in your App component, and use it 3 times in the App render function.
 
-Display this CardComponent three times, and delete every one of them each time.
+Now create three props for this CardComponent, called "title", "subtitle", "content", "buttonText".
+Convert those three CardComponents to use these props.
+Create a new prop for the CardComponent, called "number".
+Write logic in your Component, so that it doesn't render anything if the number is < 10.
+Write logic so that if the number is > 50, we render:
+ - an h1 tag called "Big number"
+ - a p tag that shows our "number" variable
 
