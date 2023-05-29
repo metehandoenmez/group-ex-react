@@ -22,8 +22,7 @@ Add a state variable called "inputText", which is a string.
 
 Save the text we input in that input tag in "inputText".
 
-Add a button called "Add item". When pressed, it will add the text in "items".
+Add a button called "Add item". When pressed, it will add the text in the inputText in the items array.
 
 Use items.map() in the App's render functionality, to render a card component for each item in the items.
-Give each card component a "key" property
-
+Put the item text in the content prop of the CardComponent.
