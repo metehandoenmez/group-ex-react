@@ -14,15 +14,8 @@ React app will run on **localhost:3000**.
 
 ## Start editing the **src/app.jsx** file.
 
-Add an input tag and a button tag to the App component.
+Make it so the text is rendered in an input tag, and whenever we edit that text, it also updates the "items".
 
-In App.jsx:
-Add a state variable called "items", which is an array.
-Add a state variable called "inputText", which is a string.
+Add a Delete Me button in the Card Component, that when clicked will delete that item from the list.
+Make it so this updates the "items" state variable, and update that variable so that it re-renders our list of cards, with the proper card updated.
 
-Save the text we input in that input tag in "inputText".
-
-Add a button called "Add item". When pressed, it will add the text in the inputText in the items array.
-
-Use items.map() in the App's render functionality, to render a card component for each item in the items.
-Put the item text in the content prop of the CardComponent.
