@@ -1,7 +1,25 @@
-export default function CardComponent(props) {
+export default function CardComponent({
+  updateItem,
+  deleteItem,
+  index,
+  content,
+}) {
   return (
     <div>
-      <p>{props.content}</p>
+      <input
+        type="text"
+        value={content}
+        onChange={(ev) => {
+          updateItem(index, ev.target.value);
+        }}
+      />
+      <button
+        onClick={() => {
+          deleteItem(index);
+        }}
+      >
+        Delete me
+      </button>
       <br />
     </div>
   );
