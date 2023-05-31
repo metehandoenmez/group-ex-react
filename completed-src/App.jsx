@@ -1,15 +1,28 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 import CardComponent from "./CardComponent.jsx";
-import { useEffect } from "react";
 
 function App() {
-  const [inputText, setInputText] = useState("");
   const [items, setItems] = useState([]);
+  const [inputText, setInputText] = useState("");
 
-  useEffect(() => {
-    console.log(inputText);
-  }, [inputText]);
+  const updateItem = (index, text) => {
+    let newItems = [...items];
+    newItems[index] = text;
+    setItems(newItems);
+  };
+
+  const deleteItem = (index) => {
+    let arr = [...items];
+    arr.splice(index, 1);
+    setItems(arr);
+  };
+
+  // const deleteItem = (index) => {
+  //   setItems(
+  //     items.slice(0, index).concat(items.slice(index + 1, items.length - 1))
+  //   );
+  // };
 
   useEffect(() => {
     console.log(items);
@@ -18,24 +31,32 @@ function App() {
   return (
     <div>
       <input
-        type="text"
         onChange={(ev) => {
-          setInputText(ev.target.value);
+          let text = ev.target.value;
+          setInputText(text);
         }}
+        type="text"
       />
       <button
         onClick={() => {
-          let toUpdateArray = [...items, inputText];
-          setItems(toUpdateArray);
+          let itemsNew = [...items, inputText];
+          setItems(itemsNew);
         }}
       >
-        Add item
+        Add Item
       </button>
       <br />
       <br />
-      {items.map((item, index) => {
-        return <CardComponent content={item}></CardComponent>;
-      })}
+      <br />
+      {items.map((item, i) => (
+        <CardComponent
+          key={"cardcomp" + i}
+          index={i}
+          updateItem={updateItem}
+          deleteItem={deleteItem}
+          content={item}
+        ></CardComponent>
+      ))}
     </div>
   );
 }
