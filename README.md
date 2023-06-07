@@ -14,14 +14,15 @@ React app will run on **localhost:3000**.
 
 ## Start editing the **src/app.jsx** file.
 
-Add a state variable called "loggedIn", which will be False.
-Add a state variable called "username", which will be null at first.
+Modify the existing code to store the "items" array in the browser's localStorage. This way, even if the user refreshes the page, the list of items will persist.
 
-Make it so that our card components are hidden at first, when user opens the website.
-Add a login screen to our page. It'll be one div, with the following tags inside of it:
-A text input field for our username.
-A button called "Log In". 
-When the user types in a username and presses the login button, save that username from the input into the "username" state variable. Set "loggedIn" to true.
-If "loggedIn" is true, hide the login screen, and show the input and card components from last time.
-You can use CSS classes to show or hide the components.
+
+1. In the App component, add a `useEffect` hook to save the "items" array to localStorage whenever it changes. Use the `localStorage.setItem()` method to store the array. The "items" array should be converted to a string using `JSON.stringify()` before storing it.
+
+2. In the App component, add code to retrieve the "items" array from localStorage when the component mounts. Use the `localStorage.getItem()` method to retrieve the stored string and convert it back to an array using `JSON.parse()`. If there are no stored items, initialize the "items" state variable with an empty array.
+
+3. Modify the code in the "Add item" button's click handler to add the new item to the "items" array and update the localStorage. After adding the new item, call `localStorage.setItem()` to store the updated "items" array.
+
+4. Modify the deleteCallback function in the App component to remove the item from the "items" array and update the localStorage. After removing the item, call `localStorage.setItem()` to store the updated "items" array.
+
 
