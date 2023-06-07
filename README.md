@@ -21,8 +21,5 @@ Modify the existing code to store the "items" array in the browser's localStorag
 
 2. In the App component, add code to retrieve the "items" array from localStorage when the component mounts. Use the `localStorage.getItem()` method to retrieve the stored string and convert it back to an array using `JSON.parse()`. If there are no stored items, initialize the "items" state variable with an empty array.
 
-3. Modify the code in the "Add item" button's click handler to add the new item to the "items" array and update the localStorage. After adding the new item, call `localStorage.setItem()` to store the updated "items" array.
-
-4. Modify the deleteCallback function in the App component to remove the item from the "items" array and update the localStorage. After removing the item, call `localStorage.setItem()` to store the updated "items" array.
 
 
