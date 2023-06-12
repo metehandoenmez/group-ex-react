@@ -14,12 +14,16 @@ React app will run on **localhost:3000**.
 
 ## Start editing the **src/app.jsx** file.
 
-Modify the existing code to store the "items" array in the browser's localStorage. This way, even if the user refreshes the page, the list of items will persist.
 
 
-1. In the App component, add a `useEffect` hook to save the "items" array to localStorage whenever it changes. Use the `localStorage.setItem()` method to store the array. The "items" array should be converted to a string using `JSON.stringify()` before storing it.
-
-2. In the App component, add code to retrieve the "items" array from localStorage when the component mounts. Use the `localStorage.getItem()` method to retrieve the stored string and convert it back to an array using `JSON.parse()`. If there are no stored items, initialize the "items" state variable with an empty array.
-
-
+ - Create a new component called `NumberDisplay`, and render only this component in App.jsx
+ - In the `NumberDisplay` component, create a state variable called `number`.
+ - Fetch the number from an API when the component mounts. Update the `number` state with the fetched value.
+ - Render the `number` state variable within the `NumberDisplay` component, in a p tag
+ - Create a button within the `NumberDisplay` component labeled "Increment".
+ - When we click on the Increment button, we increment the number value with +1
+ - Create a button called "Save to storage".
+ - When user clicks on Save, save the number to localstorage
+ - Create a button called "Load from storage".
+ - When user clicks on the load button, retrieve the saved number from localStorage and update the `number` state if a value exists when the "Load from LocalStorage" button is clicked.
 
