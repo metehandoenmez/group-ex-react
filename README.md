@@ -13,8 +13,7 @@ This will start your react app.
 React app will run on **localhost:3000**.
 
 ## Start editing the **src/app.jsx** file.
-
-
+API URL: https://www.random.org/integers/?num=1&min=1&max=100&col=1&base=10&format=plain&rnd=new
 
  - Create a new component called `NumberDisplay`, and render only this component in App.jsx
  - In the `NumberDisplay` component, create a state variable called `number`.
