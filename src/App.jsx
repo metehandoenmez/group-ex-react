@@ -5,6 +5,8 @@ import CardComponent from "./CardComponent.jsx";
 function App() {
   const [items, setItems] = useState([]);
   const [inputText, setInputText] = useState("");
+  const [loggedIn, setLoggedIn] = useState(false);
+  const [username, setUsername] = useState(null);
 
   const updateItem = (index, text) => {
     let toUpdateItems = [...items];
@@ -19,8 +21,32 @@ function App() {
     setItems(toUpdateItems);
   };
 
-  return (
-    <div>
+  
+
+    if(!loggedIn) {
+      return (
+        <div>
+          <h1>Login Screen</h1>
+          Username :<input type="text" onChange={(event) => {
+            let text = event.target.value;
+            setInputText(text)
+          }} />
+          <button onClick={(event) => {
+            setUsername(event.target.value)
+            setLoggedIn(true)
+            setUsername(inputText)
+          }}>Login</button>
+        </div>
+      )
+    }
+      else if(loggedIn) {
+        return (
+          <div>
+            Welcome, {username}! <br />
+            <button onClick={() => {
+              setLoggedIn(false)
+            }}>Logout</button>
+            <br />
       <input
         onChange={(ev) => {
           let text = ev.target.value;
@@ -45,7 +71,9 @@ function App() {
         ></CardComponent>
       ))}
     </div>
-  );
+        )
+    }
+    
 }
 
 export default App;
