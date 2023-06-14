@@ -31,8 +31,7 @@ function App() {
             let text = event.target.value;
             setInputText(text)
           }} />
-          <button onClick={(event) => {
-            setUsername(event.target.value)
+          <button onClick={() => {
             setLoggedIn(true)
             setUsername(inputText)
           }}>Login</button>
@@ -62,12 +61,13 @@ function App() {
       >
         Add Item
       </button>
-      {items.map((item, index) => (
+      {items.map((item, i) => (
         <CardComponent
-          updateItem={updateItem}
-          deleteItem={deleteItem}
-          index={index}
-          content={item}
+        key={"cardcomp" + i}
+        index={i}
+        updateItem={updateItem}
+        deleteItem={deleteItem}
+        content={item}
         ></CardComponent>
       ))}
     </div>
