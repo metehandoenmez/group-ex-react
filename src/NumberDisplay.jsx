@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import getRandomNumber from './numbers.ts'
 
 const API_URL = 'https://www.random.org/integers/?num=1&min=1&max=100&col=1&base=10&format=plain&rnd=new';
 
@@ -38,7 +37,6 @@ function NumberDisplay() {
         <button onClick={() => {
           loadFromStorage()
         }} >Load from storage</button>
-        <div>{getRandomNumber()}</div>
     </div>
   );
 }
