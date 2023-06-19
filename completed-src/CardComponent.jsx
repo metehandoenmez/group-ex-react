@@ -1,9 +1,12 @@
+import { useParams } from "react-router-dom";
+
 export default function CardComponent({
+  content,
+  index,
   updateItem,
   deleteItem,
-  index,
-  content,
 }) {
+  let { id } = useParams();
   return (
     <div>
       <input
@@ -18,9 +21,10 @@ export default function CardComponent({
           deleteItem(index);
         }}
       >
-        Delete me
+        Delete Me
       </button>
       <br />
+      {id}
     </div>
   );
 }
