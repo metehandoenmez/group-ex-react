@@ -26,7 +26,7 @@ function NumberDisplay() {
 
   return (
     <div>
-        <p>{number}</p>
+        <h1 style={{color:"white"}}>{number}</h1>
         <br />
         <button onClick={() => {
           setNumber(number + 1);

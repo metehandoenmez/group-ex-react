@@ -8,14 +8,18 @@ import NotFound from "./NotFound";
 import WelcomeComponent from "./WelcomeComponent";
 
 const style = {
-  border: "1px solid orange",
+  border: "3px solid purple",
   padding: "24px",
   borderRadius: "16px"
 }
 
 function App() {
   return (
-    <div>
+    <div style={{display:"flex",
+    flexDirection:"column",
+    justifyContent:"space-between",
+    alignItems:"center",
+    textAlign:"center"}}>
       <div style={style}>
         <Routes>
             <Route path="/" element={<WelcomeComponent></WelcomeComponent>}>
@@ -33,12 +37,15 @@ function App() {
         </Routes>
       </div>
       <br />
-      <h3>Pages:</h3>
-      <Link to={"/"}>Home</Link>
-      <br />
-      <Link to={"/card"}>Card Component</Link>
-      <br />
-      <Link to={"/number"}>Number Display</Link>
+      <div style={{backgroundColor:"rgba(209, 209, 241,0.8)",width:"100vw",height:"200px",display:"flex",flexDirection:"column",justifyContent:"center",borderTopRightRadius:"50%",borderTopLeftRadius:"50%", color:"purple"}}>
+        <h3>Pages:</h3>
+        <br />
+        <Link to={"/"}>Home</Link>
+        <br />
+        <Link to={"/card"}>Card Component</Link>
+        <br />
+        <Link to={"/number"}>Number Display</Link>
+      </div>
     </div>
 
   );

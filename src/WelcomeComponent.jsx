@@ -1,3 +1,3 @@
 export default function WelcomeComponent() {
-    return <p>Welcome!</p>
+    return <h1 style={{color:"white"}}>Welcome!</h1>
 }
