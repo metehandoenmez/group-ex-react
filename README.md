@@ -13,16 +13,16 @@ This will start your react app.
 React app will run on **localhost:3000**.
 
 ## Start editing the **src/app.jsx** file.
-API URL: https://www.random.org/integers/?num=1&min=1&max=100&col=1&base=10&format=plain&rnd=new
 
- - Create a new component called `NumberDisplay`, and render only this component in App.jsx
- - In the `NumberDisplay` component, create a state variable called `number`.
- - Fetch the number from an API when the component mounts. Update the `number` state with the fetched value.
- - Render the `number` state variable within the `NumberDisplay` component, in a p tag
- - Create a button within the `NumberDisplay` component labeled "Increment".
- - When we click on the Increment button, we increment the number value with +1
- - Create a button called "Save to storage".
- - When user clicks on Save, save the number to localstorage
- - Create a button called "Load from storage".
- - When user clicks on the load button, retrieve the saved number from localStorage and update the `number` state if a value exists when the "Load from LocalStorage" button is clicked.
+In index.js, import BrowserRouter, and wrap the <App> component in a <BrowserRouter> component.
 
+In the App component, import Routes, Route and Link from the react-router-dom package.
+
+Create two routes, one for the CardComponent, one for the NumberDisplay component. /card path for the card, /number for the number component.
+
+Create a new component called WelcomeComponent, that just displays a "Welcome!" in a p tag. Route this to the "/" path.
+
+Add Links for each of these routes.
+
+Create another component called NotFound, which will route to the path "*". Just display "Not found" in a p tag in that component.
+ If the user goes to any other route than the ones that have a specific component for them, then react router will display that component for them.
