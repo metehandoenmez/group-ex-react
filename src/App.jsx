@@ -8,8 +8,6 @@ import WelcomeComponent from "./WelcomeComponent";
 import CardComponent from "./CardComponent";
 import NotFound from "./NotFound";
 
-import { getRandomNumber } from "./numbers.ts";
-
 function App() {
   return (
     <div>
@@ -28,7 +26,6 @@ function App() {
       <Link to={"/card"}>Card</Link>
       <br />
       <Link to={"/number"}>Number</Link>
-      {getRandomNumber()}
     </div>
   );
 }
